@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+int userValue;
+cout << "Enter and int: ";
+//get the user's number
+cin >> userValue;
+if (userValue %2 == 0)
+  cout << userValue << "is even. \n\n";
+else 
+  cout << userValue << is odd.\n\n";
+}
