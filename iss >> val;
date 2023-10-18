@@ -1,0 +1,27 @@
+//istringstream constructors
+#include <iostream>
+#include <sstream>
+#include <string>
+int main() {
+  std::string stringvalues = "125 320 512 750 333";
+  std::istringstream iss (stringvalues);
+  for (int n=0; n<5; n++)
+  {
+    int val;
+    iss >> val; /*the >> operator is used to read data 
+    from the istringstream object.In this case, the >>
+    operator will read the next value from the
+  stream and store it in the variable val.
+  for the first iteration of the for loop, the >>
+  operator will read the value 125
+  from the stream and store it in val. The variable
+  val will then be doubled and printed to the 
+console.*/
+   std::cout << val*2 << '\n';
+  }
+}
+/*250
+640
+1024
+1500
+666 OUTPUT*/
