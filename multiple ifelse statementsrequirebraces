@@ -1,0 +1,19 @@
+using namespace std;
+int main()
+{
+int userValue;
+cout << "Enter an int: ";
+//get the user's number
+cin >> userValue;
+if (userValue %2 == 0)
+  {cout << userValue << "is even. \n\n";
+  cout << "multiple statements require ifelse braces" <<endl;}
+else 
+ {cout << userValue << "  is odd.\n\n";
+  cout << "multiple statments require ifelse braces" <<endl;}
+}
+/*Enter an int: 4567
+4567  is odd.
+
+multiple statments require ifelse braces
+ */
