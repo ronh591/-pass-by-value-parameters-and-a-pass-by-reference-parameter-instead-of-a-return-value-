@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+int main()
+{
+string userString;
+double num;
+//these should be the same conversion worked
+cout << "Type in something and I'll tell you if"
+"\nthe first part can be converted to a number: ";
+//compute using the number
+getline(cin, userString);
+if (istringstream(userString) >> num)
+ cout <<"yes, i was able to convert the first part to the number: "
+  << num << endl;
+else
+ cout << "no, " << userString
+  << "begins with non-numeric content. " << endl;
+}
+?*Type in something and I'll tell you if
+the first part can be converted to a number: 44kkkkk
+yes, i was able to convert the first part to the number: 44
+ */
