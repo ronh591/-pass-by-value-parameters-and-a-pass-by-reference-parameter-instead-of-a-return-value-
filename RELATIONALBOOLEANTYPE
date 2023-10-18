@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+bool x;
+x = true;
+cout << x << endl;
+/* you would not see "true" or "false" but 0 and 1.  
+This is one place where C++ differs from all other programming languages.
+*/
+int a = 44;
+int b = 45;
+a + b <= 100;
+if ( a != b)
+ a--;
+cout <<a;
+if(11)
+cout << "dtklsjlk";}
+/*1
+43dtklsjlk */OUTPUT
