@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string limerick = "There once was a programmer named Bard,\nWhose code was quite simply absurd.\nHe tried his best,\nBut it was a mess,\nAnd the compiler just gave him a bird.";
+
+string last_word = "bird";
+
+string guess_last_word() {
+  string guess;
+  int chances = 5;
+
+  cout << "What is the last word in the limerick?\n";
+  cin >> guess;
+
+  while (guess != last_word && chances > 0) {
+    cout << "Incorrect. You have " << chances << " chances left.\n";
+    cin >> guess;
+    chances--;
+  }
+
+  if (guess == last_word) {
+    cout << "Correct!\n";
+  } else {
+    cout << "Sorry, you ran out of chances. The last word is " << last_word << ".\n";
+  }
+
+  return guess;
+}
+
+int main() {
+  string choice;
+
+  while (choice != "Exit") {
+    cout << "Menu:\n";
+    cout << "Play\n";
+    cout << "Cheat\n";
+    cout << "Exit\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    if (choice == "Play") {
+      string guess = guess_last_word();
+    } else if (choice == "Cheat") {
+      cout << limerick << endl;
+    }
+  }
+  string guess = guess_last_word();
+
+  return 0;
+}
