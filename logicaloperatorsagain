@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+  char inState;
+  double price, tax;
+  string tempString;
+  //find out if we should charge state tax
+  cout << "are you in-state?";
+  getline(cin, tempString);
+  //copy the first char only
+  inState = tempString[0];
+  //get the amount
+  cout << "what is the amount? ";
+  cin >> price;
+  if (inState == 'y' || inState == 'Y')
+  {
+    if (price < .12)
+      tax = 0;
+    else if (price < .24)
+      tax = .01;
+    else if (price < .36)
+      tax = .02;
+    else
+      tax = 0;
+    cout << "the amount of tax is  " << tax << endl;
+}}
