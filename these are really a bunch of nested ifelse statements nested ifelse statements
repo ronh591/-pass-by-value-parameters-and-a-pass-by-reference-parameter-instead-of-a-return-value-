@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+  int depth;
+  cout <<"what is your diving depth in feet?";
+  cin >> depth;
+  if (depth < 33)
+    cout << "use 2 atm. \n";
+  else 
+   {
+      if (depth < 66)
+	cout << "use 3 atm \n";
+      else
+      {
+         if (depth < 99)
+           cout << "use 4 atm \n";
+         else 
+         {
+           if (depth < 132)
+             cout << "use 5 atm \n";
+           else 
+             cout << "you are too deep \n";
+          }
+       }
+    }
+}
