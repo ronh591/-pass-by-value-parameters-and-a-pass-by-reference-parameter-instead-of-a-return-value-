@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string limerick = "a limerick has five lines,\nwith two feet in the fourth,\nand two in the third,\nthe second has three,\nand you can tell it to a _______.";
+string limerick1 ="a limerick has five lines,\nwith two feet in the fourth,\nand two in the third,\nthe second has three,\nand you can tell it to a __tree_____.";
+string last_word = "tree";
+
+string GuessLimerick() {
+ string guess;
+ int chances = 5;
+ int i = 0;
+
+ cout << limerick;
+ cout << "What is the last word in the limerick? (use lower case letters)\n";
+ cin >> guess;
+
+ while (guess != last_word && i < chances) {
+   cout << "Incorrect. You have " << chances - i - 1 << " chances left.\n";
+   cin >> guess;
+    i++;
+  }
+
+ if (guess == last_word) {
+  cout << "Correct!\n";
+  
+ } else {
+  cout << "Sorry, you ran out of chances. The last word is " << last_word << ".\n";
+ }
+
+ return guess;
+}
+
+int main() {
+ string choice;
+ string returned_guess;
+
+ while (choice !=  "exit") {
+  cout << "menu:\n";
+  cout << "play\n";
+  cout << "cheat\n";
+  cout << "exit\n";
+  cout << "Enter your choice: ";
+  cin >> choice;
+
+  if (choice == "play") {
+    returned_guess = GuessLimerick();
+    if (returned_guess == last_word) { // If the user guessed the last word, end the program.
+      break;
+    }
+  } else if (choice == "cheat") {
+    cout << limerick1 << endl;
+    break; // End the program after printing the limerick.
+  } else if (choice ==  "exit") {
+    break; // End the program if the user chooses to exit.
+  }
+ }
+
+ return 0;
+}
