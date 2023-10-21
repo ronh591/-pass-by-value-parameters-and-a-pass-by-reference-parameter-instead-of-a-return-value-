@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+using namespace std;
+string limerick = "it grows in the ground,\n and has branches";
+string limerick1 = "a limerick have five ___tree___";
+string last_word = "tree";
+string GuessLimerick() {
+ string guess;
+ int chances = 5;
+ int i = 0;
+ cout << limerick;
+ cout << "what is the last word\n";
+ cin >> guess;
+ while (guess != last_word && i < chances) {
+  cout << "incorrect. you have" << chances - i -1 << "chances left.\n";
+  cin >> guess;
+    i++;
+  }
+ if (guess == last_word) {
+   cout << "correct!\n";
+} else {
+  cout << "sorry, out of chances. the last word is" << last_word << ".\n";
+ }
+  return guess;
+}
+int main() {
+  string choice;
+  string returned_guess;
+  while (choice != "exit") {
+    cout << "menu:\n";
+    cout << "play\n";
+    cout << "cheat\n";
+    cout << "exit\n";
+    cout << "enter choice: ";
+    cin >> choice;
+  if (choice == "play") {
+    returned_guess = GuessLimerick();/*n the main() function, the returned_guess
+ variable is assigned the value of the GuessLimerick() function.(this is the 
+  return value of the return guess statement. This means that 
+ the returned_guess variable will contain the user's guess for the last word*/
+    if (returned_guess == last_word) {
+      break; 
+} //break statement is contained in brackets
+}   else if (choice == "cheat") {
+    cout << limerick1 << endl;
+    break;
+}
+}
+return 0;
+}
